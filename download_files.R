@@ -1,5 +1,5 @@
 #Set Working directory
-setwd("C:/Users/lc067/Documents/DA/Kaggle/")
+setwd("./DA/Kaggle/")
 
 #Check if the directory "TalkingData" exists in the wokring directory
 #If not, create one!
@@ -98,6 +98,3 @@ if(!file.exists("./data/gender_age_train.zip")){
 download.file(url = gender_age_train_url,
               destfile = "./data/gender_age_train.zip")
 }
-
-#Unzip files
-unzip(zipfile = "./data/")
