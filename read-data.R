@@ -1,7 +1,9 @@
 #This script is used to read data using `read.csv` command
 
-options(stringsAsFactors = FALSE) #set global option to read files
 setwd("/TalkingData/") # set working directory
+options(stringsAsFactors = FALSE) #set global option to read files
+library(dplyr) #load `dplyr` package
+
 
 app_events <- read.csv("app_events.csv/app_events.csv", colClasses = c("integer", "character", "integer", "integer"))
 app_labels <- read.csv("app_labels.csv/app_labels.csv", colClasses = c("character", "integer"))
