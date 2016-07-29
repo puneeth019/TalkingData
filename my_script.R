@@ -2,12 +2,14 @@ library(dplyr)  # load dplyr
 
 options(stringsAsFactors = FALSE) #set global option to read files
 
-setwd("/Desktop/TalkingData/") # set working directory
+setwd("C:/Users/lc067/Desktop/TalkingData/") # set working directory
 
 app_events <- read.csv("app_events.csv/app_events.csv",
                        colClasses = c("integer", "character", "integer", "integer"))
+app_events <- tbl_df(app_events)
 app_labels <- read.csv("app_labels.csv/app_labels.csv",
-                       colClasses = c("character", "character"))
+                       colClasses = c("character", "integer"))
+app_labels <- tbl_df(app_labels)
 events <- read.csv("events.csv/events.csv",
                    colClasses = c(""))
 gender_age_test <- read.csv("gender_age_test.csv/gender_age_test.csv",
