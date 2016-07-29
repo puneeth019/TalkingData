@@ -2,7 +2,7 @@ library(dplyr)  # load dplyr
 
 options(stringsAsFactors = FALSE) #set global option to read files
 
-setwd("C:/Users/lc067/Desktop/TalkingData/") # set working directory
+setwd("/Desktop/TalkingData/") # set working directory
 
 app_events <- read.csv("app_events.csv/app_events.csv",
                        colClasses = c("integer", "character", "integer", "integer"))
