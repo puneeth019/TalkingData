@@ -1,4 +1,4 @@
-#This script is used to clean data  using `dplyr` package
+#This script is used to read data  using `dplyr` package
 
 library(dplyr)  # load `dplyr` package
 options(stringsAsFactors = FALSE) #set global option to read files
