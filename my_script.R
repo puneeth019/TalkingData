@@ -1,3 +1,5 @@
+#This script is used for cleaning data
+
 library(dplyr)  # load dplyr
 
 options(stringsAsFactors = FALSE) #set global option to read files
