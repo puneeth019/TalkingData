@@ -1,10 +1,8 @@
 #This script is used for cleaning data
 
-library(dplyr)  # load dplyr
-
+library(dplyr)  # load `dplyr` package
 options(stringsAsFactors = FALSE) #set global option to read files
-
-setwd("C:/Users/lc067/Desktop/TalkingData/") # set working directory
+setwd("/TalkingData/") # set working directory
 
 app_events <- read.csv("app_events.csv/app_events.csv", colClasses = c("integer", "character", "integer", "integer"))
 app_labels <- read.csv("app_labels.csv/app_labels.csv", colClasses = c("character", "integer"))
