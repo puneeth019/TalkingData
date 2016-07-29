@@ -24,8 +24,3 @@ gender_age_test <- tbl_df(gender_age_test)
 gender_age_train <- tbl_df(gender_age_train)
 label_categories <- tbl_df(label_categories)
 phone_brand_device_model <- tbl_df(phone_brand_device_model)
-
-# time taken to read the data with & without "colClasses" option in "read.csv"
-systime_with_colClasses <- system.time(read.csv(file = "app_events.csv/app_events.csv",
-  colClasses = c("integer","character","integer","integer")))
-systime_wo_colClasses <- system.time(read.csv(file = "app_events.csv/app_events.csv"))
