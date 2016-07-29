@@ -1,15 +1,23 @@
-library(dplyr)
+library(dplyr)  # load dplyr
 
-setwd("C:/Users/lc067/Desktop/TalkingData/")
+options(stringsAsFactors = FALSE) #set global option to read files
 
-app_events <- read.csv("app_events.csv/app_events.csv", stringsAsFactors = FALSE)
-app_labels <- read.csv("app_labels.csv/app_labels.csv", stringsAsFactors = FALSE)
-events <- read.csv("events.csv/events.csv", stringsAsFactors = FALSE)
-gender_age_test <- read.csv("gender_age_test.csv/gender_age_test.csv", stringsAsFactors = FALSE)
-gender_age_train <- read.csv("gender_age_train.csv/gender_age_train.csv", stringsAsFactors = FALSE)
-label_categories <- read.csv("label_categories.csv/label_categories.csv", stringsAsFactors = FALSE)
-phone_brand_device_model <- read.csv("phone_brand_device_model.csv/phone_brand_device_model.csv", stringsAsFactors = FALSE)
-sample_submission <- read.csv("sample_submission.csv/sample_submission.csv", stringsAsFactors = FALSE)
+setwd("C:/Users/lc067/Desktop/TalkingData/") # set working directory
+
+app_events <- read.csv("app_events.csv/app_events.csv",
+                       colClasses = c("integer", "character", "integer", "integer"))
+app_labels <- read.csv("app_labels.csv/app_labels.csv",
+                       colClasses = c("character", "character"))
+events <- read.csv("events.csv/events.csv",
+                   colClasses = c(""))
+gender_age_test <- read.csv("gender_age_test.csv/gender_age_test.csv",
+                            colClasses = c(""))
+gender_age_train <- read.csv("gender_age_train.csv/gender_age_train.csv",
+                             colClasses = c(""))
+label_categories <- read.csv("label_categories.csv/label_categories.csv",
+                             colClasses = c(""))
+phone_brand_device_model <- read.csv("phone_brand_device_model.csv/phone_brand_device_model.csv", colClasses = c(""))
+sample_submission <- read.csv("sample_submission.csv/sample_submission.csv", colClasses = c(""))
 
 app_events  <- tbl_df(app_events)
 app_labels <- tbl_df(app_labels)
@@ -22,4 +30,8 @@ sample_submission <- tbl_df(sample_submission)
 
 events_timestamp <- events$timestamp
 
-
+# time taken to read the data with & without "colClasses" option in "read.csv"
+systime_with_colClasses <- system.time(read.csv(
+  file = "app_events.csv/app_events.csv",
+  colClasses = c("integer","character","integer","integer")))
+systime_wo_colClasses <- system.time(read.csv(file = "app_events.csv/app_events.csv", stringsAsFactors = FALSE))
