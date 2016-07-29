@@ -4,13 +4,13 @@ library(dplyr)  # load `dplyr` package
 options(stringsAsFactors = FALSE) #set global option to read files
 setwd("/TalkingData/") # set working directory
 
-app_events <- read.csv("app_events.csv/app_events.csv", colClasses = c("numeric", "character", "numeric", "numeric"))
+app_events <- read.csv("app_events.csv/app_events.csv", colClasses = c("integer", "character", "integer", "integer"))
 app_labels <- read.csv("app_labels.csv/app_labels.csv", colClasses = c("character", "numeric"))
 events <- read.csv("events.csv/events.csv", colClasses = c("numeric", "character", "character", "numeric", "numeric"))
 gender_age_test <- read.csv("gender_age_test.csv/gender_age_test.csv", colClasses = c("character"))
 gender_age_train <- read.csv("gender_age_train.csv/gender_age_train.csv",
-  colClasses = c("character", "character", "numeric", "character"))
-label_categories <- read.csv("label_categories.csv/label_categories.csv", colClasses = c("numeric", "character"))
+  colClasses = c("integer", "character", "integer", "character"))
+label_categories <- read.csv("label_categories.csv/label_categories.csv", colClasses = c("integer", "character"))
 phone_brand_device_model <- read.csv("phone_brand_device_model.csv/phone_brand_device_model.csv",
   colClasses = c("character","character","character"))
 
