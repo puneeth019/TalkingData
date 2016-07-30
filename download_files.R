@@ -16,6 +16,7 @@ if(!dir.exists("./data")){
   dir.create("./data")
 }
 
+#
 #Get urls of the data
 gender_age_test_url <- paste("https://kaggle2.blob.core.windows.net/",
                              "competitions-data/kaggle/5340/gender_a",
