@@ -7,7 +7,7 @@ All the stuff that's created here is as a part of Kaggle's [Talking-Data](https:
 In [read-data.R](https://github.com/puneeth019/TalkingData/blob/master/read-data.R) input data is read using `base::read.csv()` command, whereas in [read-data_readr.R](https://github.com/puneeth019/TalkingData/blob/master/read-data_readr.R) data is read using `readr::read_csv()` command.
 
 ###Observations
-After using the `readr` package the code looks neat & simple as the number of lines in the code are reduced from 22 to 11. And operations such as `options(stringsAsFactors = FASLE)` & converting `data.frame`s into `tibble`s using `tbl_df()` command are not required in the latter script. The width of the code is also reduced due to efficient usage of `col_types` argument in `readr`. One of the main advantage of using `readr`package is that it is a lot faster.
+After using the `readr` package the code looks neat & simple as the number of lines in the code are reduced from 22 to 11. And operations such as `options(stringsAsFactors = FASLE)` & converting `data.frame`s into `tibble`s using `tbl_df()` command are not required in the latter script. The width of the code is also reduced due to efficient usage of `col_types` argument in `readr`. One of the main advantage of using `readr` package is that it is a lot faster.
 
 ###Comments
 Two points to note here are the difference between `base::read.csv()` & `readr::read_csv()` commands and also differences in similar arguments `colClasses` & `col_types`.
