@@ -10,7 +10,7 @@ In [read-data.R](https://github.com/puneeth019/TalkingData/blob/master/read-data
 After using the `readr` package the code looks neat & simple as the number of lines in the code are reduced from 22 to 11. And operations such as `options(stringsAsFactors = FASLE)` & converting `data.frame`s into `tibble`s using `tbl_df()` command are not required in the latter script. The width of the code is also reduced due to efficient usage of `col_types` argument in `readr`. One of the main advantage of using `readr` package is that it is a lot faster.
 
 ###Comments
-Two points to note here are the difference between `base::read.csv()` & `readr::read_csv()` commands and also differences in similar arguments `colClasses` & `col_types`.
+Two points to note here are the differences between `base::read.csv()` & `readr::read_csv()` commands and `colClasses` & `col_types` arguments.
 
 ###Credits
 Thanks [Kaggle](https://www.kaggle.com/) for the motivation and [adam-p](https://github.com/adam-p)'s [Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for Markdown.
