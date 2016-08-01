@@ -3,7 +3,7 @@
 setwd("~Desktop/TalkingData/") # set working directory
 
 library(readr)  # load `readr` package
-library(dply)   # load `dplyr` pacakge
+library(dplyr)   # load `dplyr` pacakge
 
 app_events <- read_csv("app_events.csv/app_events.csv", col_types = "icii")
 app_labels <- read_csv("app_labels.csv/app_labels.csv", col_types = "ci")
