@@ -1,6 +1,6 @@
 #This script is used to read data  using `readr` package
 
-setwd("C:/Users/lc067/Desktop/TalkingData/") # set working directory
+setwd("~Desktop/TalkingData/") # set working directory
 
 library(readr)  # load `readr` package
 library(dply)   # load `dplyr` pacakge
@@ -18,4 +18,4 @@ app_label_cat <- tbl_df(app_label_cat)  # convert into `tibble`
 
 #merge `app_events` & `app_label_cat` to create `app_event_cat`
 app_event_cat <- merge(x = app_events, y = app_label_cat, all.x = TRUE, by = 'app_id')
-app_event_cat <- tbl_df(app_event_cat)
+app_event_cat <- tbl_df(app_event_cat)  # convert into `tibble`
