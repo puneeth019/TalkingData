@@ -1,6 +1,31 @@
-### A look at the data
+## A look at the data
 
-events.csv, app_events.csv - when a user uses TalkingData SDK, the event gets logged in this data. Each event has an event id, location (lat/long), and the event corresponds to a list of apps in app_events.
+###*gender_age_train.csv*
+The training data set.
+
+```R
+gender_age_train <- read_csv("gender_age_train.csv/gender_age_train.csv", col_types = "ccic")
+gender_age_train
+
+# A tibble: 74,645 x 4
+              device_id gender   age  group
+                  <chr>  <chr> <int>  <chr>
+1  -8076087639492063270      M    35 M32-38
+2  -2897161552818060146      M    35 M32-38
+3  -8260683887967679142      M    35 M32-38
+4  -4938849341048082022      M    30 M29-31
+5    245133531816851882      M    30 M29-31
+6  -1297074871525174196      F    24 F24-26
+7    236877999787307864      M    36 M32-38
+8  -8098239495777311881      M    38 M32-38
+9    176515041953473526      M    33 M32-38
+10  1596610250680140042      F    36 F33-42
+# ... with 74,635 more rows
+```
+
+###events.csv, app_events.csv
+When a user uses TalkingData SDK, the event gets logged in this data. Each event has an event id, location (lat/long), and the event corresponds to a list of apps in app_events.
+
 ```R
 events <- read_csv("events.csv/events.csv", col_types = "iccdd")
 events
@@ -39,7 +64,9 @@ app_events
 # ... with 32,473,057 more rows
 ```
 
-app_labels.csv - apps and their labels, the label_id's can be used to join with label_categories
+###app_labels.csv
+Apps and their labels, the `label_id`'s can be used to join with `label_categories`
+
 ```R
 app_labels <- read_csv("app_labels.csv/app_labels.csv", col_types = "ci")
 app_labels
@@ -59,26 +86,7 @@ app_labels
 10  5902120154267999338      256
 # ... with 459,933 more rows
 ```
-gender_age_train.csv - the training set
-```R
-gender_age_train <- read_csv("gender_age_train.csv/gender_age_train.csv", col_types = "ccic")
-gender_age_train
 
-# A tibble: 74,645 x 4
-              device_id gender   age  group
-                  <chr>  <chr> <int>  <chr>
-1  -8076087639492063270      M    35 M32-38
-2  -2897161552818060146      M    35 M32-38
-3  -8260683887967679142      M    35 M32-38
-4  -4938849341048082022      M    30 M29-31
-5    245133531816851882      M    30 M29-31
-6  -1297074871525174196      F    24 F24-26
-7    236877999787307864      M    36 M32-38
-8  -8098239495777311881      M    38 M32-38
-9    176515041953473526      M    33 M32-38
-10  1596610250680140042      F    36 F33-42
-# ... with 74,635 more rows
-```
 
 label_categories.csv - apps' labels and their categories in text
 ```R
