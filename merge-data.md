@@ -1,6 +1,6 @@
 ### Merge data using `merge` command
 
-Merge `app_labels` & `label_categories` to get the data for apps and the respective categories in the same data.frame
+Merge `app_labels` & `label_categories` using `label_id` as the common variable
 
 ```R
 app_label_cat <- merge(x = app_labels, y = label_categories, all = TRUE, by = 'label_id')
