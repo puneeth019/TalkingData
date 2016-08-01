@@ -1,47 +1,6 @@
 ### A look at the data
 
 events.csv, app_events.csv - when a user uses TalkingData SDK, the event gets logged in this data. Each event has an event id, location (lat/long), and the event corresponds to a list of apps in app_events.
-
-```R
-app_events <- read_csv("app_events.csv/app_events.csv", col_types = "icii")
-app_events
-
-# A tibble: 32,473,067 x 4
-   event_id               app_id is_installed is_active
-      <int>                <chr>        <int>     <int>
-1         2  5927333115845830913            1         1
-2         2 -5720078949152207372            1         0
-3         2 -1633887856876571208            1         0
-4         2  -653184325010919369            1         1
-5         2  8693964245073640147            1         1
-6         2  4775896950989639373            1         1
-7         2 -8022267440849930066            1         0
-8         2  9112463267739110219            1         0
-9         2 -3725672010020973973            1         0
-10        2  7167114343576723123            1         1
-# ... with 32,473,057 more rows
-```
-
-```R
-app_labels <- read_csv("app_labels.csv/app_labels.csv", col_types = "ci")
-app_labels
-
-# A tibble: 459,943 x 2
-                 app_id label_id
-                  <chr>    <int>
-1   7324884708820027918      251
-2  -4494216993218550286      251
-3   6058196446775239644      406
-4   6058196446775239644      407
-5   8694625920731541625      406
-6   8694625920731541625      407
-7   1977658975649789753      406
-8   1977658975649789753      407
-9   7311663864768030840      256
-10  5902120154267999338      256
-# ... with 459,933 more rows
-```
-
 ```R
 events <- read_csv("events.csv/events.csv", col_types = "iccdd")
 events
@@ -61,6 +20,46 @@ events
 10       10 -8195816569128397698 2016-05-01 00:41:31    119.34    26.04
 # ... with 3,252,940 more rows
 
+app_events <- read_csv("app_events.csv/app_events.csv", col_types = "icii")
+app_events
+
+# A tibble: 32,473,067 x 4
+   event_id               app_id is_installed is_active
+      <int>                <chr>        <int>     <int>
+1         2  5927333115845830913            1         1
+2         2 -5720078949152207372            1         0
+3         2 -1633887856876571208            1         0
+4         2  -653184325010919369            1         1
+5         2  8693964245073640147            1         1
+6         2  4775896950989639373            1         1
+7         2 -8022267440849930066            1         0
+8         2  9112463267739110219            1         0
+9         2 -3725672010020973973            1         0
+10        2  7167114343576723123            1         1
+# ... with 32,473,057 more rows
+```
+
+app_labels.csv - apps and their labels, the label_id's can be used to join with label_categories
+```R
+app_labels <- read_csv("app_labels.csv/app_labels.csv", col_types = "ci")
+app_labels
+
+# A tibble: 459,943 x 2
+                 app_id label_id
+                  <chr>    <int>
+1   7324884708820027918      251
+2  -4494216993218550286      251
+3   6058196446775239644      406
+4   6058196446775239644      407
+5   8694625920731541625      406
+6   8694625920731541625      407
+7   1977658975649789753      406
+8   1977658975649789753      407
+9   7311663864768030840      256
+10  5902120154267999338      256
+# ... with 459,933 more rows
+```
+gender_age_train.csv - the training set
 ```R
 gender_age_train <- read_csv("gender_age_train.csv/gender_age_train.csv", col_types = "ccic")
 gender_age_train
@@ -81,6 +80,7 @@ gender_age_train
 # ... with 74,635 more rows
 ```
 
+label_categories.csv - apps' labels and their categories in text
 ```R
 label_categories <- read_csv("label_categories.csv/label_categories.csv", col_types = "ic")
 label_categories
@@ -100,7 +100,7 @@ label_categories
 10       10          game-Answer
 # ... with 920 more rows
 ```
-
+phone_brand_device_model.csv - device ids, brand, and models
 ```R
 phone_brand_device_model <- read_csv("phone_brand_device_model.csv/phone_brand_device_model.csv", col_types = "ccc")
 phone_brand_device_model
