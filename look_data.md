@@ -1,7 +1,7 @@
 ## A look at the data
 
 ###*gender_age_train.csv*
-The training data set.
+The training data-set.
 
 ```R
 gender_age_train <- read_csv("gender_age_train.csv/gender_age_train.csv", col_types = "ccic")
@@ -23,8 +23,8 @@ gender_age_train
 # ... with 74,635 more rows
 ```
 
-###events.csv, app_events.csv
-When a user uses TalkingData SDK, the event gets logged in this data. Each event has an event id, location (lat/long), and the event corresponds to a list of apps in app_events.
+###*events.csv* & *app_events.csv*
+When a user uses TalkingData SDK, the event gets logged in this data. Each event has an `event_id`, location (lat/long), and the event corresponds to a list of apps in `app_events`.
 
 ```R
 events <- read_csv("events.csv/events.csv", col_types = "iccdd")
@@ -64,8 +64,31 @@ app_events
 # ... with 32,473,057 more rows
 ```
 
-###app_labels.csv
-Apps and their labels, the `label_id`'s can be used to join with `label_categories`
+###*label_categories.csv *
+Apps' labels and their categories in text.
+
+```R
+label_categories <- read_csv("label_categories.csv/label_categories.csv", col_types = "ic")
+label_categories
+
+# A tibble: 930 x 2
+   label_id             category
+      <int>                <chr>
+1         1                 <NA>
+2         2       game-game type
+3         3     game-Game themes
+4         4       game-Art Style
+5         5    game-Leisure time
+6         6  game-Cutting things
+7         7   game-Finding fault
+8         8 game-stress reliever
+9         9             game-pet
+10       10          game-Answer
+# ... with 920 more rows
+```
+
+###*app_labels.csv*
+Apps and their labels, the `label_id`'s can be used to join with `label_categories`.
 
 ```R
 app_labels <- read_csv("app_labels.csv/app_labels.csv", col_types = "ci")
@@ -87,28 +110,9 @@ app_labels
 # ... with 459,933 more rows
 ```
 
+###*phone_brand_device_model.csv*
+This file contains `device id`s, `phone_brand`, and models
 
-label_categories.csv - apps' labels and their categories in text
-```R
-label_categories <- read_csv("label_categories.csv/label_categories.csv", col_types = "ic")
-label_categories
-
-# A tibble: 930 x 2
-   label_id             category
-      <int>                <chr>
-1         1                 <NA>
-2         2       game-game type
-3         3     game-Game themes
-4         4       game-Art Style
-5         5    game-Leisure time
-6         6  game-Cutting things
-7         7   game-Finding fault
-8         8 game-stress reliever
-9         9             game-pet
-10       10          game-Answer
-# ... with 920 more rows
-```
-phone_brand_device_model.csv - device ids, brand, and models
 ```R
 phone_brand_device_model <- read_csv("phone_brand_device_model.csv/phone_brand_device_model.csv", col_types = "ccc")
 phone_brand_device_model
@@ -129,4 +133,4 @@ phone_brand_device_model
 # ... with 187,235 more rows
 ```
 
-[source](https://www.kaggle.com/c/talkingdata-mobile-user-demographics/data)
+[Source](https://www.kaggle.com/c/talkingdata-mobile-user-demographics/data)
