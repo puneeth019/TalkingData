@@ -1,5 +1,6 @@
 ### A look at the data
 
+events.csv, app_events.csv - when a user uses TalkingData SDK, the event gets logged in this data. Each event has an event id, location (lat/long), and the event corresponds to a list of apps in app_events.
 
 ```R
 app_events
