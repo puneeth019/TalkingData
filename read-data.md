@@ -8,7 +8,7 @@ In [read-data.R](https://github.com/puneeth019/TalkingData/blob/master/read-data
 
 ```R
 app_events <- read.csv("app_events.csv/app_events.csv",
-colClasses = c("integer", "character", "integer", "integer"))
+                      colClasses = c("integer", "character", "integer", "integer"))
 ```
 
 Whereas, in [read-data_readr.R](https://github.com/puneeth019/TalkingData/blob/master/read-data_readr.R) data is read using `readr::read_csv()` command
