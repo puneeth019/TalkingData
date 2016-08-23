@@ -1,5 +1,5 @@
 #Set Working directory
-setwd("./DA/Kaggle/")
+setwd("~/DA/Kaggle/")
 
 #Check if the directory "TalkingData" exists in the wokring directory
 #If not, create one!
